@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+    <title>EDI Estimator</title>
+  </head>
+
+  <body>
+    <div class="ui two top attached buttons">
+      <a class="ui primary button" href="/ediEstimator.html">
+        <img
+          class="ui centered mini circular image"
+          src="https://th.bing.com/th/id/OIP.t-yjNCab6L6SFCmMPUCxnAAAAA?pid=ImgDet&rs=1"
+        />
+      </a>
+      <a class="ui yellow button" href="./3plEstimator.html">
+        <img
+          class="ui centered mini image"
+          src="https://th.bing.com/th/id/R.2cd91495a28d3779dc7673fc8fc7ff7d?rik=wwqmZBXrIv%2bESA&riu=http%3a%2f%2fsdrlogistics.com%2fwp-content%2fuploads%2f2018%2f06%2f3PL.png&ehk=a0Op%2bcx8L2yWea551hxnda5YLVgqhIAgYCL2vhHSvpA%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+        />
+      </a>
+    </div>
+
+    <div class="ui very padded segment">
+      <h2 class="ui header">
+        <img
+          class="ui image"
+          src="https://th.bing.com/th/id/OIP.t-yjNCab6L6SFCmMPUCxnAAAAA?pid=ImgDet&rs=1"
+        />
+        <div class="content">
+          EDI
+          <div class="sub header">Connection Complexity Estimator</div>
+        </div>
+      </h2>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="field">
+            <label>Name</label>
+            <div class="two fields">
+              <div class="field">
+                <input
+                  type="text"
+                  id="clientName"
+                  name="Client"
+                  placeholder="Client Name"
+                />
+              </div>
+              <div class="field">
+                <input
+                  type="text"
+                  id="connectionName"
+                  name="Connection"
+                  placeholder="Connection Name"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">EDI Standards/Versions:</div>
+            </div>
+
+            <div class="ui horizontal divider">Or</div>
+
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 4010)"
+                  value="3"
+                  checked
+                />
+                <label>X12 (version 4010)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 4030)"
+                  value="7"
+                />
+                <label>X12 (version 4030)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 2040)"
+                  value="9"
+                />
+                <label>X12 (version 2040)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 4040)"
+                  value="9"
+                />
+                <label>X12 (version 4040)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 4050)"
+                  value="9"
+                />
+                <label>X12 (version 4050)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 4060)"
+                  value="9"
+                />
+                <label>X12 (version 4060)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 5010)"
+                  value="5"
+                />
+                <label>X12 (version 5010)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 6010)"
+                  value="9"
+                />
+                <label>X12 (version 6010)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: X12 (version 6020)"
+                  value="9"
+                />
+                <label>X12 (version 6020)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: EDIFACT D96A"
+                  value="5"
+                />
+                <label>EDIFACT D96A</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: EDIFACT D97A"
+                  value="9"
+                />
+                <label>EDIFACT D97A</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: EDIFACT D01B"
+                  value="6"
+                />
+                <label>EDIFACT D01B</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: TextFile (XML)"
+                  value="3"
+                />
+                <label>TextFile (XML) only for existing retailers</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: TextFile (CSV)"
+                  value="2"
+                />
+                <label>TextFile (CSV) only for existing retailers</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Standards"
+                  data-name="EDI Standards/Versions: Others"
+                  value="10"
+                />
+                <label>Others</label>
+              </div>
+            </div>
+            <div class="ui input disabled" id="textStandard">
+              <input type="text" placeholder="Standard/Version..." />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">Required Messages:</div>
+            </div>
+
+            <div class="ui negative message">
+              <strong>850 (ORDERS)</strong> has to be always ticked!
+            </div>
+
+            <div class="ui horizontal divider">And</div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| 850 (ORDERS) "
+                value="1"
+                checked
+              />
+              <label>*850 (ORDERS)</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| (ORDRSP) "
+                value="4"
+              />
+              <label>(ORDRSP)</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| 856 (DESADV/ASN) "
+                value="7"
+              />
+              <label>856 (DESADV/ASN)</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| 810 (INVOIC) "
+                value="6"
+              />
+              <label>810 (INVOIC)</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| 846 (INVRPT) "
+                value="6"
+              />
+              <label>846 (INVRPT)</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Required Messages: "
+                data-name="|| Extra message "
+                value="7"
+              />
+              <label>Extra message</label>
+            </div>
+          </div>
+          <div class="ui input disabled" id="textExtraMessage">
+            <input type="text" placeholder="Message..." required />
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">Integration Type:</div>
+            </div>
+
+            <div class="ui horizontal divider">Or</div>
+
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Type"
+                  data-name="Integration Type: VAN"
+                  value="2"
+                />
+                <label>VAN</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Type"
+                  data-name="Integration Type: SFTP (hosted by the retailer)"
+                  value="6"
+                />
+                <label>SFTP (hosted by the retailer)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Type"
+                  data-name="Integration Type: FTP (hosted by us or retailer)"
+                  value="3"
+                  checked
+                />
+                <label>FTP (hosted by us or retailer)</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Type"
+                  data-name="Integration Type: AS2"
+                  value="7"
+                />
+                <label>AS2</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">Product type:</div>
+            </div>
+
+            <div class="ui olive message">Tick at least one.</div>
+
+            <div class="ui horizontal divider">And</div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Product type: "
+                data-name="|| Batch "
+                value="7"
+              />
+              <label>Batch</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Product type: "
+                data-name="|| Serial products "
+                value="7"
+              />
+              <label>Serial products</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Product type: "
+                data-name="|| FIFO "
+                value="2"
+                checked
+              />
+              <label>FIFO</label>
+            </div>
+          </div>
+          <div class="inline field">
+            <div class="ui checkbox">
+              <input
+                type="checkbox"
+                data-title="!Product type: "
+                data-name="|| UOM (cartons or eachs) "
+                value="4"
+              />
+              <label>Add extra: UOM (cartons or eachs)</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">Mapping:</div>
+            </div>
+
+            <div class="ui horizontal divider">Or</div>
+
+            <div class="ui info message">new connection</div>
+
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Mapping"
+                  data-name="Mapping: Need changes"
+                  value="26"
+                />
+                <label>Need changes</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Mapping"
+                  data-name="Mapping: Don't need changes"
+                  value="22"
+                />
+                <label>Don't need changes</label>
+              </div>
+            </div>
+
+            <div class="ui info message">old connection</div>
+
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Mapping"
+                  data-name="Mapping: Need changes"
+                  value="12"
+                />
+                <label>Need changes</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Mapping"
+                  data-name="Mapping: Don't need changes"
+                  value="6"
+                  checked
+                />
+                <label>Don't need changes</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui padded segment">
+        <div class="ui form">
+          <div class="grouped fields">
+            <div class="ui attached message">
+              <div class="header">Compliance:</div>
+            </div>
+
+            <div class="ui horizontal divider">Or</div>
+
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Compliance"
+                  data-name="Compliance: Email based"
+                  value="16"
+                />
+                <label>Email based</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Compliance"
+                  data-name="Compliance: Portal based"
+                  value="6"
+                  checked
+                />
+                <label>Portal based</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input
+                  type="radio"
+                  name="Compliance"
+                  data-name="Compliance: No compliance required"
+                  value="0"
+                />
+                <label>No compliance required</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="ui horizontal divider header">
+        <i class="bar chart icon"></i>
+        Results
+      </h4>
+
+      <button class="fluid ui button primary" id="btn">Estimate</button>
+
+      <div class="ui horizontal segments attached warning message">
+        <div class="ui center aligned segment">
+          <div class="ui small statistic" id="colorComplexity">
+            <div class="value" id="result">0</div>
+            <div class="label">Complexity of 100% max</div>
+          </div>
+        </div>
+        <div class="ui center aligned segment">
+          <div class="ui small statistic" id="colorWeeks">
+            <div class="value" id="weeks">0</div>
+            <div class="label">Weeks of 12 max</div>
+          </div>
+        </div>
+      </div>
+      <p id="summary"></p>
+    </div>
+
+    <script>
+      let summary = document.querySelector("#summary");
+      let summaryString = "";
+      let showResult = document.querySelector("#result");
+      let showWeeks = document.querySelector("#weeks");
+      let colorComplexity = document.querySelector("#colorComplexity");
+      let colorWeeks = document.querySelector("#colorWeeks");
+      let client = document.querySelector("#clientName");
+      let connection = document.querySelector("#connectionName");
+      let inputDivStandard = document.querySelector("#textStandard");
+      let inputValueStandard = document.querySelector("#textStandard input");
+      let standardsRadio = document.querySelectorAll("input[name='Standards']");
+      let othersMsgRadio = document.querySelector(
+        "input[data-name='EDI Standards/Versions: Others']"
+      );
+      let inputDivExtraMessage = document.querySelector("#textExtraMessage");
+      let inputValueExtraMessage = document.querySelector(
+        "#textExtraMessage input"
+      );
+      let extraMsgCheckbox = document.querySelector(
+        "input[data-name='|| Extra message ']"
+      );
+
+      let checkIfRadio = (element) => {
+        return element.type === "radio"
+          ? element.dataset.name === "EDI Standards/Versions: Others"
+          : element.checked;
+      };
+
+      let hideInput = (check, input) => {
+        checkIfRadio(check)
+          ? input.classList.remove("disabled")
+          : input.classList.add("disabled");
+      };
+
+      extraMsgCheckbox.addEventListener("change", (event) => {
+        hideInput(event.target, inputDivExtraMessage);
+      });
+
+      standardsRadio.forEach((el) => {
+        el.addEventListener("change", (event) => {
+          hideInput(event.target, inputDivStandard);
+        });
+      });
+
+      let extraInputValueAdd = (check, input, message) => {
+        return checkIfRadio(check)
+          ? summaryString.replace(message, `${message} ${input.value}`)
+          : summaryString;
+      };
+
+      let colorFunc = (sum, color) => {
+        sum <= 40
+          ? color.classList.add("green")
+          : sum >= 70
+          ? color.classList.add("red")
+          : color.classList.add("yellow");
+      };
+
+      let restFunc = (element, color) => {
+        element.innerHTML = "";
+        color.className = "ui small statistic";
+      };
+
+      let clipboardFunc = () => {
+        let clipboardNames =
+          document.querySelector("#clipboardNames").textContent;
+        let clipboardText = document.querySelector("#clipboardText").innerHTML;
+        let copyText = `${clipboardNames}\n${clipboardText.replaceAll(
+          "<br>",
+          "\n"
+        )}`;
+
+        function listener(e) {
+          e.clipboardData.setData("text/html", copyText);
+          e.clipboardData.setData("text/plain", copyText);
+          e.preventDefault();
+        }
+
+        document.addEventListener("copy", listener);
+        document.execCommand("copy");
+        document.removeEventListener("copy", listener);
+      };
+
+      let createSummary = (checkbox, radio) => {
+        let resultStr = "";
+        let setArr = new Set();
+        [...checkbox].map((el) => {
+          setArr.add(el.dataset.title);
+          setArr.add(el.dataset.name);
+        });
+
+        [kill, ...rest] = [...setArr].join("").split("!");
+
+        [...radio].map((el) => (resultStr += `${el.dataset.name}<br/>`));
+
+        resultStr += rest.join("<br/>");
+
+        return resultStr;
+      };
+
+      document.querySelector("#btn").onclick = function () {
+        let markedCheckbox = document.querySelectorAll(
+          'input[type="checkbox"]:checked'
+        );
+        let markedRadio = document.querySelectorAll(
+          'input[type="radio"]:checked'
+        );
+        restFunc(showResult, colorComplexity);
+        restFunc(showWeeks, colorWeeks);
+
+        let resultsArr = [...markedRadio, ...markedCheckbox].map((el) =>
+          Number(el.value)
+        );
+
+        let totalComplexity = resultsArr.reduce((a, b) => a + b, 0);
+        let totalWeeks = (totalComplexity / 9.2).toFixed(1);
+
+        colorFunc(totalComplexity, colorComplexity);
+        colorFunc(totalComplexity, colorWeeks);
+
+        let percentage = `${Math.ceil((totalComplexity / 110) * 100)}%`;
+
+        showResult.innerHTML = percentage;
+        showWeeks.innerHTML = totalWeeks;
+
+        summaryString = createSummary(markedCheckbox, markedRadio);
+        summaryString = extraInputValueAdd(
+          othersMsgRadio,
+          inputValueStandard,
+          "EDI Standards/Versions: Others"
+        );
+        summaryString = extraInputValueAdd(
+          extraMsgCheckbox,
+          inputValueExtraMessage,
+          "Extra message"
+        );
+
+        summary.innerHTML = `<div class="ui positive message">
+                               <a class="ui teal right corner label" onclick="clipboardFunc()">
+                                <i class="copy link icon" ></i>
+                               </a>
+                                <div class="header" id="clipboardNames">${client.value} ${connection.value}</div>
+                                <div id="clipboardText">${summaryString}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
+                             </div>`;
+
+        summaryString = "";
+      };
+    </script>
+  </body>
+</html>
