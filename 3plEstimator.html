@@ -1,658 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-    />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
-    <title>3PL Estimator</title>
-  </head>
 
-  <body>
-    <div class="ui two top attached buttons">
-      <a class="ui primary button" href="./ediEstimator.html">
-        <img
-          class="ui centered mini circular image"
-          src="https://th.bing.com/th/id/OIP.t-yjNCab6L6SFCmMPUCxnAAAAA?pid=ImgDet&rs=1"
-        />
-      </a>
-      <a class="ui yellow button" href="./3plEstimator.html">
-        <img
-          class="ui centered mini image"
-          src="https://th.bing.com/th/id/R.2cd91495a28d3779dc7673fc8fc7ff7d?rik=wwqmZBXrIv%2bESA&riu=http%3a%2f%2fsdrlogistics.com%2fwp-content%2fuploads%2f2018%2f06%2f3PL.png&ehk=a0Op%2bcx8L2yWea551hxnda5YLVgqhIAgYCL2vhHSvpA%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
-        />
-      </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+  <title>3PL Estimator</title>
+</head>
+
+<body>
+  <div class="ui two top attached buttons">
+    <a class="ui primary button" href="index.html">
+      <img class="ui centered mini circular image" src="./img/edi.jpg" />
+    </a>
+    <a class="ui yellow button" href="3plEstimator.html">
+      <img class="ui centered mini image" src="./img/3pl.png" />
+    </a>
+  </div>
+
+  <div class="ui very padded segment">
+    <h2 class="ui header">
+      <img class="ui image" src="./img/3pl.png" />
+      <div class="content">
+        3PL
+        <div class="sub header">Connection Complexity Estimator</div>
+      </div>
+    </h2>
+
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" id="clientName" name="Client" placeholder="Client Name" />
+            </div>
+            <div class="field">
+              <input type="text" id="connectionName" name="Connection" placeholder="Connection Name" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="ui very padded segment">
-      <h2 class="ui header">
-        <img
-          class="ui image"
-          src="https://th.bing.com/th/id/R.2cd91495a28d3779dc7673fc8fc7ff7d?rik=wwqmZBXrIv%2bESA&riu=http%3a%2f%2fsdrlogistics.com%2fwp-content%2fuploads%2f2018%2f06%2f3PL.png&ehk=a0Op%2bcx8L2yWea551hxnda5YLVgqhIAgYCL2vhHSvpA%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
-        />
-        <div class="content">
-          3PL
-          <div class="sub header">Connection Complexity Estimator</div>
-        </div>
-      </h2>
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Cin7 transactions:</div>
+          </div>
 
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="field">
-            <label>Name</label>
-            <div class="two fields">
-              <div class="field">
-                <input
-                  type="text"
-                  id="clientName"
-                  name="Client"
-                  placeholder="Client Name"
-                />
-              </div>
-              <div class="field">
-                <input
-                  type="text"
-                  id="connectionName"
-                  name="Connection"
-                  placeholder="Connection Name"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <div class="ui olive message">Tick at least one.</div>
 
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Cin7 transactions:</div>
-            </div>
-
-            <div class="ui olive message">Tick at least one.</div>
-
-            <div class="ui horizontal divider">And</div>
-
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Purchase Order "
-                  value="4"
-                />
-                <label>Purchase Order</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Sales Order "
-                  value="6"
-                  checked
-                />
-                <label>Sales Order</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Branch Transfer out "
-                  value="5"
-                />
-                <label>Branch Transfer out</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Branch transfer in "
-                  value="5"
-                />
-                <label>Branch transfer in</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Inventory import "
-                  value="4"
-                />
-                <label>Inventory import</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Product export "
-                  value="7"
-                />
-                <label
-                  >Product export (Only for SFTP/FTP communication type)
-                </label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui checkbox">
-                <input
-                  type="checkbox"
-                  name="transactions"
-                  data-title="!Cin7 transactions: "
-                  data-name="|| Credit notes "
-                  value="4"
-                />
-                <label>Credit notes</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Communication type:</div>
-            </div>
-
-            <div class="ui horizontal divider">Or</div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Communication"
-                data-name="Communication type: API"
-                checked
-                value="7"
-                checked
-              />
-              <label>API</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Communication"
-                data-name="Communication type: SFTP"
-                value="5"
-              />
-              <label>SFTP</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Communication"
-                data-name="Communication type: FTP"
-                value="5"
-              />
-              <label>FTP</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Communication"
-                data-name="Communication type: API & SFTP/FTP"
-                value="15"
-              />
-              <label>API & SFTP/FTP</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">File formats:</div>
-            </div>
-
-            <div class="ui horizontal divider">Or</div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: JSON"
-                value="5"
-                checked
-              />
-              <label>JSON</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: XML"
-                value="8"
-              />
-              <label>XML</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: CSV"
-                value="5"
-              />
-              <label>CSV</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: TXT"
-                value="5"
-              />
-              <label>TXT</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: EDI X12 4010"
-                value="6"
-              />
-              <label>EDI X12 4010</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: EDI X12 5010"
-                value="6"
-              />
-              <label>EDI X12 5010</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui radio checkbox">
-              <input
-                type="radio"
-                name="Formats"
-                data-name="File formats: Any two file formats"
-                value="15"
-              />
-              <label>Any two file formats</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Product type:</div>
-            </div>
-
-            <div class="ui olive message">Tick at least one.</div>
-
-            <div class="ui horizontal divider">And</div>
-          </div>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Product type: "
-                data-name="|| Batch "
-                value="7"
-              />
-              <label>Batch</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Product type: "
-                data-name="|| Serial products "
-                value="7"
-              />
-              <label>Serial products</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Product type: "
-                data-name="|| FIFO "
-                value="4"
-                checked
-              />
-              <label>FIFO</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Sales channels:</div>
-            </div>
-
-            <div class="ui horizontal divider">And</div>
-          </div>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Sales channels: "
-                data-name="|| EDI "
-                value="7"
-              />
-              <label>EDI</label>
-            </div>
-          </div>
-          <div class="inline field">
-            <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Sales channels: "
-                data-name="|| eCommerce "
-                value="4"
-                checked
-              />
-              <label>eCommerce</label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Extra Complexity:</div>
-            </div>
-          </div>
           <div class="ui horizontal divider">And</div>
-          <div class="inline field">
+
+          <div class="field">
             <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Extra Complexity: "
-                data-name="|| Special workflow "
-                value="10"
-              />
-              <label>Special workflow</label>
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: "
+                data-name="|| Purchase Order " value="4" />
+              <label>Purchase Order</label>
             </div>
           </div>
-          <div class="inline field">
+          <div class="field">
             <div class="ui checkbox">
-              <input
-                type="checkbox"
-                data-title="!Extra Complexity: "
-                data-name="|| BOMs or UOM products "
-                value="6"
-              />
-              <label>BOMs or UOM products</label>
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: " data-name="|| Sales Order "
+                value="6" checked />
+              <label>Sales Order</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: "
+                data-name="|| Branch Transfer out " value="5" />
+              <label>Branch Transfer out</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: "
+                data-name="|| Branch transfer in " value="5" />
+              <label>Branch transfer in</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: "
+                data-name="|| Inventory import " value="4" />
+              <label>Inventory import</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: "
+                data-name="|| Product export " value="7" />
+              <label>Product export (Only for SFTP/FTP communication type)
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="transactions" data-title="!Cin7 transactions: " data-name="|| Credit notes "
+                value="4" />
+              <label>Credit notes</label>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Mapping:</div>
-            </div>
-
-            <div class="ui horizontal divider">Or</div>
-
-            <div class="ui info message">new connection</div>
-
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Mapping"
-                  data-name="Mapping: Need changes"
-                  value="20"
-                />
-                <label>Need changes</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Mapping"
-                  data-name="Mapping: Don't need changes"
-                  value="10"
-                />
-                <label>Don't need changes</label>
-              </div>
-            </div>
-
-            <div class="ui info message">old connection</div>
-
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Mapping"
-                  data-name="Mapping: Need changes"
-                  value="12"
-                />
-                <label>Need changes</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Mapping"
-                  data-name="Mapping: Don't need changes"
-                  value="6"
-                  checked
-                />
-                <label>Don't need changes</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ui padded segment">
-        <div class="ui form">
-          <div class="grouped fields">
-            <div class="ui attached message">
-              <div class="header">Compliance:</div>
-            </div>
-
-            <div class="ui horizontal divider">Or</div>
-
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Compliance"
-                  data-name="Compliance: Email based"
-                  value="16"
-                  checked
-                />
-                <label>Email based</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input
-                  type="radio"
-                  name="Compliance"
-                  data-name="Compliance: No compliance required"
-                  value="0"
-                />
-                <label>No compliance required</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h4 class="ui horizontal divider header">
-        <i class="bar chart icon"></i>
-        Results
-      </h4>
-
-      <button class="fluid ui button primary" id="btn">Estimate</button>
-
-      <div class="ui horizontal segments attached warning message">
-        <div class="ui center aligned segment">
-          <div class="ui small statistic" id="colorComplexity">
-            <div class="value" id="result">0</div>
-            <div class="label">Complexity of 100% max</div>
-          </div>
-        </div>
-        <div class="ui center aligned segment">
-          <div class="ui small statistic" id="colorWeeks">
-            <div class="value" id="weeks">0</div>
-            <div class="label">Weeks of 12 max</div>
-          </div>
-        </div>
-      </div>
-      <p id="summary"></p>
     </div>
 
-    <script>
-      let summary = document.querySelector("#summary");
-      let summaryString = "";
-      let showResult = document.querySelector("#result");
-      let showWeeks = document.querySelector("#weeks");
-      let colorComplexity = document.querySelector("#colorComplexity");
-      let colorWeeks = document.querySelector("#colorWeeks");
-      let client = document.querySelector("#clientName");
-      let connection = document.querySelector("#connectionName");
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Communication type:</div>
+          </div>
 
-      let colorFunc = (sum, color) => {
-        sum <= 52
-          ? color.classList.add("green")
-          : sum >= 90
-          ? color.classList.add("red")
-          : color.classList.add("yellow");
-      };
+          <div class="ui horizontal divider">Or</div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Communication" data-name="Communication type: API" checked value="7" checked />
+            <label>API</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Communication" data-name="Communication type: SFTP" value="5" />
+            <label>SFTP</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Communication" data-name="Communication type: FTP" value="5" />
+            <label>FTP</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Communication" data-name="Communication type: API & SFTP/FTP" value="15" />
+            <label>API & SFTP/FTP</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      let restFunc = (element, color) => {
-        element.innerHTML = "";
-        color.className = "ui small statistic";
-      };
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">File formats:</div>
+          </div>
 
-      let clipboardFunc = () => {
-        let clipboardNames =
-          document.querySelector("#clipboardNames").textContent;
-        let clipboardText = document.querySelector("#clipboardText").innerHTML;
-        let copyText = `${clipboardNames}\n${clipboardText.replaceAll(
-          "<br>",
-          "\n"
-        )}`;
+          <div class="ui horizontal divider">Or</div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: JSON" value="5" checked />
+            <label>JSON</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: XML" value="8" />
+            <label>XML</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: CSV" value="5" />
+            <label>CSV</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: TXT" value="5" />
+            <label>TXT</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: EDI X12 4010" value="6" />
+            <label>EDI X12 4010</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: EDI X12 5010" value="6" />
+            <label>EDI X12 5010</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="Formats" data-name="File formats: Any two file formats" value="15" />
+            <label>Any two file formats</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        function listener(e) {
-          e.clipboardData.setData("text/html", copyText);
-          e.clipboardData.setData("text/plain", copyText);
-          e.preventDefault();
-        }
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Product type:</div>
+          </div>
 
-        document.addEventListener("copy", listener);
-        document.execCommand("copy");
-        document.removeEventListener("copy", listener);
-      };
+          <div class="ui olive message">Tick at least one.</div>
 
-      let createSummary = (checkbox, radio) => {
-        let resultStr = "";
-        let setArr = new Set();
-        [...checkbox].map((el) => {
-          setArr.add(el.dataset.title);
-          setArr.add(el.dataset.name);
-        });
+          <div class="ui horizontal divider">And</div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Product type: " data-name="|| Batch " value="7" />
+            <label>Batch</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Product type: " data-name="|| Serial products " value="7" />
+            <label>Serial products</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Product type: " data-name="|| FIFO " value="4" checked />
+            <label>FIFO</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        [kill, ...rest] = [...setArr].join("").split("!");
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Sales channels:</div>
+          </div>
 
-        [...radio].map(
-          (el) => (resultStr += `${el.dataset.name}<br/>`)
-        );
+          <div class="ui horizontal divider">And</div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Sales channels: " data-name="|| EDI " value="7" />
+            <label>EDI</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Sales channels: " data-name="|| eCommerce " value="4" checked />
+            <label>eCommerce</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        resultStr += rest.join("<br/>");
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Extra Complexity:</div>
+          </div>
+        </div>
+        <div class="ui horizontal divider">And</div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Extra Complexity: " data-name="|| Special workflow " value="10" />
+            <label>Special workflow</label>
+          </div>
+        </div>
+        <div class="inline field">
+          <div class="ui checkbox">
+            <input type="checkbox" data-title="!Extra Complexity: " data-name="|| BOMs or UOM products " value="6" />
+            <label>BOMs or UOM products</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        return resultStr;
-      };
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Mapping:</div>
+          </div>
 
-      document.querySelector("#btn").onclick = function () {
-        let markedCheckbox = document.querySelectorAll(
-          'input[type="checkbox"]:checked'
-        );
-        let markedRadio = document.querySelectorAll(
-          'input[type="radio"]:checked'
-        );
-        restFunc(showResult, colorComplexity);
-        restFunc(showWeeks, colorWeeks);
+          <div class="ui horizontal divider">Or</div>
 
-        let resultsArr = [...markedRadio, ...markedCheckbox].map((el) =>
-          Number(el.value)
-        );
+          <div class="ui info message">new connection</div>
 
-        let totalComplexity = resultsArr.reduce((a, b) => a + b, 0);
-        let totalWeeks = (totalComplexity / 12.2).toFixed(1);
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Mapping" data-name="Mapping: Need changes" value="20" />
+              <label>Need changes</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Mapping" data-name="Mapping: Don't need changes" value="10" />
+              <label>Don't need changes</label>
+            </div>
+          </div>
 
-        colorFunc(totalComplexity, colorComplexity);
-        colorFunc(totalComplexity, colorWeeks);
+          <div class="ui info message">old connection</div>
 
-        let percentage = `${Math.ceil((totalComplexity/146)*100)}%`;
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Mapping" data-name="Mapping: Need changes" value="12" />
+              <label>Need changes</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Mapping" data-name="Mapping: Don't need changes" value="6" checked />
+              <label>Don't need changes</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        showResult.innerHTML = percentage;
-        showWeeks.innerHTML = totalWeeks;
-       
-        summaryString = createSummary(markedCheckbox,markedRadio);
+    <div class="ui padded segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <div class="ui attached message">
+            <div class="header">Compliance:</div>
+          </div>
 
-        summary.innerHTML = `<div class="ui positive message">
-                               <a class="ui teal right corner label" onclick="clipboardFunc()">
-                                <i class="copy link icon" ></i>
-                               </a>                               
-                                <div class="header" id="clipboardNames">${client.value} ${connection.value}</div>
-                                <div id="clipboardText">${summaryString}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
-                             </div>`;
-        summaryString = "";
-      };
-    </script>
-  </body>
+          <div class="ui horizontal divider">Or</div>
+
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Compliance" data-name="Compliance: Email based" value="16" checked />
+              <label>Email based</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="Compliance" data-name="Compliance: No compliance required" value="0" />
+              <label>No compliance required</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="ui horizontal divider header">
+      <i class="bar chart icon"></i>
+      Results
+    </h4>
+
+    <button class="fluid ui button primary" id="btn">Estimate</button>
+
+    <div class="ui horizontal segments attached warning message">
+      <div class="ui center aligned segment">
+        <div class="ui small statistic" id="colorComplexity">
+          <div class="value" id="result">0</div>
+          <div class="label">Complexity of 100% max</div>
+        </div>
+      </div>
+      <div class="ui center aligned segment">
+        <div class="ui small statistic" id="colorWeeks">
+          <div class="value" id="weeks">0</div>
+          <div class="label">Weeks of 12 max</div>
+        </div>
+      </div>
+    </div>
+    <p id="summary"></p>
+  </div>
+
+  <script src="./js/script3PL.js"></script>
+</body>
+
 </html>
