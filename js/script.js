@@ -98,6 +98,15 @@ let createSummary = (checkbox, radio) => {
     return resultStr;
 };
 
+let getDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.toLocaleString("default", { month: "short" });
+    const day = date.getDate();
+
+    return [day, month, year].join('-');
+};
+
 document.querySelector("#btn").onclick = function () {
     let markedCheckbox = document.querySelectorAll(
         'input[type="checkbox"]:checked'
@@ -140,7 +149,7 @@ document.querySelector("#btn").onclick = function () {
                         <i class="copy link icon" ></i>
                        </a>
                         <div class="header" id="clipboardNames">${client.value} ${connection.value}</div>
-                        <div id="clipboardText">${summaryString}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
+                        <div id="clipboardText">${summaryString}<br/>Date of estimation: ${getDate()}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
                      </div>`;
 
     summaryString = "";
