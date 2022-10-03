@@ -49,9 +49,9 @@ let extraInputValueAdd = (check, input, message) => {
 };
 
 let colorFunc = (sum, color) => {
-    sum <= 40
+    sum <= 44.5
         ? color.classList.add("green")
-        : sum >= 70
+        : sum >= 78
             ? color.classList.add("red")
             : color.classList.add("yellow");
 };
@@ -122,12 +122,12 @@ document.querySelector("#btn").onclick = function () {
     );
 
     let totalComplexity = resultsArr.reduce((a, b) => a + b, 0);
-    let totalWeeks = (totalComplexity / 9.2).toFixed(1);
+    let totalWeeks = (totalComplexity / 10.2).toFixed(1);
 
     colorFunc(totalComplexity, colorComplexity);
     colorFunc(totalComplexity, colorWeeks);
 
-    let percentage = `${Math.ceil((totalComplexity / 110) * 100)}%`;
+    let percentage = `${Math.ceil((totalComplexity / 122) * 100)}%`;
 
     showResult.innerHTML = percentage;
     showWeeks.innerHTML = totalWeeks;

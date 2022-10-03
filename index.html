@@ -49,6 +49,33 @@
             <div class="ui form">
                 <div class="grouped fields">
                     <div class="ui attached message">
+                        <div class="header">Direct/Dropship:</div>
+                    </div>
+
+                    <div class="ui horizontal divider">Or</div>
+
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DirectDropship" data-name="Direct/Dropship: Direct" value="0"
+                                checked />
+                            <label>Direct</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="DirectDropship" data-name="Direct/Dropship: Dropship" value="0" />
+                            <label>Dropship</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui padded segment">
+            <div class="ui form">
+                <div class="grouped fields">
+                    <div class="ui attached message">
                         <div class="header">EDI Standards/Versions:</div>
                     </div>
 
@@ -189,7 +216,7 @@
                 <div class="inline field">
                     <div class="ui checkbox">
                         <input type="checkbox" data-title="!Required Messages: " data-name="|| (ORDRSP) " value="4" />
-                        <label>(ORDRSP)</label>
+                        <label>855 (ORDRSP)</label>
                     </div>
                 </div>
                 <div class="inline field">
@@ -199,6 +226,22 @@
                         <label>856 (DESADV/ASN)</label>
                     </div>
                 </div>
+
+                <div class="inline field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" data-title="!Required Messages: " data-name="|| 860 (ORDCHG) "
+                            value="6" />
+                        <label>860 (ORDCHG)</label>
+                    </div>
+                </div>
+
+                <div class="inline field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" data-title="!Required Messages: " data-name="|| 865 " value="6" />
+                        <label>865</label>
+                    </div>
+                </div>
+
                 <div class="inline field">
                     <div class="ui checkbox">
                         <input type="checkbox" data-title="!Required Messages: " data-name="|| 810 (INVOIC) "
@@ -213,6 +256,15 @@
                         <label>846 (INVRPT)</label>
                     </div>
                 </div>
+
+                <div class="inline field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" data-title="!Required Messages: " data-name="|| 997 (CONTRL) "
+                            value="0" />
+                        <label>997 (CONTRL)</label>
+                    </div>
+                </div>
+
                 <div class="inline field">
                     <div class="ui checkbox">
                         <input type="checkbox" data-title="!Required Messages: " data-name="|| Extra message "
