@@ -6,11 +6,52 @@
 // let colorWeeks = document.querySelector("#colorWeeks");
 // let client = document.querySelector("#clientName");
 // let connection = document.querySelector("#connectionName");
+let inputDivStandard = document.querySelector("#textStandard");
+let inputValueStandard = document.querySelector("#textStandard input");
+let standardsRadio = document.querySelectorAll("input[name='Standards']");
+let othersMsgRadio = document.querySelector(
+    "input[data-name='EDI Standards/Versions: Others']"
+);
+let inputDivExtraMessage = document.querySelector("#textExtraMessage");
+let inputValueExtraMessage = document.querySelector(
+    "#textExtraMessage input"
+);
+let extraMsgCheckbox = document.querySelector(
+    "input[data-name='|| Extra message ']"
+);
+
+let checkIfRadio = (element) => {
+    return element.type === "radio"
+        ? element.dataset.name === "EDI Standards/Versions: Others"
+        : element.checked;
+};
+
+let hideInput = (check, input) => {
+    checkIfRadio(check)
+        ? input.classList.remove("disabled")
+        : input.classList.add("disabled");
+};
+
+extraMsgCheckbox.addEventListener("change", (event) => {
+    hideInput(event.target, inputDivExtraMessage);
+});
+
+standardsRadio.forEach((el) => {
+    el.addEventListener("change", (event) => {
+        hideInput(event.target, inputDivStandard);
+    });
+});
+
+let extraInputValueAdd = (check, input, message) => {
+    return checkIfRadio(check)
+        ? summaryString.replace(message, `${message} ${input.value}`)
+        : summaryString;
+};
 
 // let colorFunc = (sum, color) => {
-//     sum <= 52
+//     sum <= 44.5
 //         ? color.classList.add("green")
-//         : sum >= 90
+//         : sum >= 78
 //             ? color.classList.add("red")
 //             : color.classList.add("yellow");
 // };
@@ -81,27 +122,37 @@ document.querySelector("#btn").onclick = function () {
     );
 
     let totalComplexity = resultsArr.reduce((a, b) => a + b, 0);
-    let totalWeeks = (totalComplexity / 12.2).toFixed(1);
+    let totalWeeks = (totalComplexity / 10.2).toFixed(1);
 
-    colorFunc(totalComplexity, colorComplexity, threeplMiddleNumber, threeplUpperNumber);
-    colorFunc(totalComplexity, colorWeeks, threeplMiddleNumber, threeplUpperNumber);
+    colorFunc(totalComplexity, colorComplexity, ediMiddleNumber, ediUpperNumber);
+    colorFunc(totalComplexity, colorWeeks, ediMiddleNumber, ediUpperNumber);
 
-    let percentage = `${Math.ceil((totalComplexity / 146) * 100)}%`;
+    let percentage = `${Math.ceil((totalComplexity / 122) * 100)}%`;
 
     showResult.innerHTML = percentage;
     showWeeks.innerHTML = totalWeeks;
 
     summaryString = createSummary(markedCheckbox, markedRadio);
+    summaryString = extraInputValueAdd(
+        othersMsgRadio,
+        inputValueStandard,
+        "EDI Standards/Versions: Others"
+    );
+    summaryString = extraInputValueAdd(
+        extraMsgCheckbox,
+        inputValueExtraMessage,
+        "Extra message"
+    );
 
     // summary.innerHTML = `<div class="ui positive message">
-    //                            <a class="ui teal right corner label" onclick="clipboardFunc()">
-    //                             <i class="copy link icon" ></i>
-    //                            </a>                               
-    //                             <div class="header" id="clipboardNames">${client.value} ${connection.value}</div>
-    //                             <div id="clipboardText">${summaryString}<br/>Date of estimation: ${getDate()}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
-    //                          </div>`;
+    //                    <a class="ui teal right corner label" onclick="clipboardFunc()">
+    //                     <i class="copy link icon" ></i>
+    //                    </a>
+    //                     <div class="header" id="clipboardNames">${client.value} ${connection.value}</div>
+    //                     <div id="clipboardText">${summaryString}<br/>Date of estimation: ${getDate()}<br/>Complexity: ${percentage} of 100%<br/>Weeks: ${totalWeeks} of 12</div>
+    //                  </div>`;
+
     // summaryString = "";
 
     showSummaryHTML(summary, summaryString, client.value, connection.value, percentage, totalWeeks);
-
 };
