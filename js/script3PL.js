@@ -1,3 +1,5 @@
+// Duplicates are commented
+
 // let summary = document.querySelector("#summary");
 // let summaryString = "";
 // let showResult = document.querySelector("#result");
